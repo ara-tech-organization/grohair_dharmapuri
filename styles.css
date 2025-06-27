@@ -8,7 +8,7 @@ body {
   color: #333;
   line-height: 1.6;
   font-size: 1rem;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 ::-webkit-scrollbar {
@@ -395,6 +395,63 @@ body {
 
 .accordion-button:focus {
   box-shadow: none;
+}
+
+@media (max-width: 575.98px) {
+  .faq-section {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .faq-search {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .accordion-button {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .faq-search {
+    max-width: 90%;
+  }
+
+  .accordion-button {
+    font-size: 0.92rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .faq-search {
+    max-width: 80%;
+  }
+
+  .accordion-button {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .faq-search {
+    max-width: 70%;
+  }
+
+  .accordion-button {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .faq-search {
+    max-width: 60%;
+  }
+
+  .accordion-button {
+    font-size: 1.05rem;
+  }
 }
 
 /* Footer------------------------------------------------------------ */
