@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="styles.css" />
   <!-- Google Font: Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-XxKXFDvP/3Je4tM+6aQ8qfFGyA5qzI7FOUljX1u6pjQ9BX63JZy3eG8OZ/n7OjdrqzSb2ypKxzjD7EjsO8yzWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 
 </head>
 <body>
@@ -26,8 +29,9 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -36,12 +40,13 @@
 
 <section class="hero-section d-flex align-items-center justify-content-center text-white text-center">
   <div class="overlay"></div>
-  <div class="content">
-    <h1 class="display-3 fw-bold">Grohair & Gloskin – Dharmapuri’s Trusted Hair & Skin Experts</h1>
-    <p class="lead">Advanced hair restoration and skin rejuvenation treatments delivered by certified specialists. Book your consultation today in Dharmapuri.</p>
+  <div class="content w-100">
+    <h1 class="hero-title fw-bold">Grohair & Gloskin – Dharmapuri’s Trusted Hair & Skin Experts</h1>
+    <p class="lead hero-subtitle">Advanced hair restoration and skin rejuvenation treatments delivered by certified specialists. Book your consultation today in Dharmapuri.</p>
     <a href="/contact.html" class="btn btn-primary-custom mt-3 px-4 py-2 rounded-pill">Book Appointment</a>
   </div>
 </section>
+
 
 <section class="about-section-custom about-bg py-5">
 
@@ -214,12 +219,12 @@
     <div class="row text-start g-5">
       <!-- LEFT COLUMN - GrowHair -->
       <div class="col-md-6">
-        <h3 class="fw-semibold text-center text-danger mb-3">GrowHair</h3>
+        <h3 class="fw-semibold text-center text-danger mb-3">Grohair</h3>
         <div class="accordion" id="faqGrowHair">
           <div class="accordion-item">
   <h2 class="accordion-header" id="gh1">
     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gh-collapse1">
-      How does GrowHair treatment work?
+      How does Grohair treatment work?
     </button>
   </h2>
   <div id="gh-collapse1" class="accordion-collapse collapse" data-bs-parent="#faqGrowHair">
@@ -230,7 +235,7 @@
 <div class="accordion-item">
   <h2 class="accordion-header" id="gh2">
     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gh-collapse2">
-      Is GrowHair suitable for all hair types?
+      Is Grohair suitable for all hair types?
     </button>
   </h2>
   <div id="gh-collapse2" class="accordion-collapse collapse" data-bs-parent="#faqGrowHair">
@@ -367,20 +372,21 @@
       <!-- Column 2: Quick Links -->
       <div class="col-md-3">
         <h5 class="fw-bold mb-3">Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="#home" class="footer-link">Home</a></li>
-          <li><a href="#about" class="footer-link">About</a></li>
-          <li><a href="#services" class="footer-link">Services</a></li>
-          <li><a href="#contact" class="footer-link">Contact</a></li>
+        <ul class="list-unstyle">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="service.html" class="footer-link">Services</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
 
       <!-- Column 3: Contact Info -->
       <div class="col-md-3">
         <h5 class="fw-bold mb-3">Get In Touch</h5>
-        <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>Dharmapuri, Tamil Nadu, India</p>
-        <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>+91 98765 43210</p>
-        <p class="mb-3"><i class="bi bi-envelope-fill me-2"></i>contact@grohairgloskin.in</p>
+        <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>#14, R3, 2nd Floor, TS Square, Nethaji Bypass,
+Indhira Nagar, Dharmapuri</p>
+        <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>+91 75991 56789</p>
+        <p class="mb-3"><i class="bi bi-envelope-fill me-2"></i>dharmapuri@adgrohair.com</p>
 
         <div class="social-icons mt-2">
           <a href="#" class="footer-icon"><i class="bi bi-facebook"></i></a>
@@ -393,15 +399,7 @@
       <div class="col-md-3">
         <h5 class="fw-bold mb-3">Our Location</h5>
         <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.234576188657!2d78.15991767501133!3d11.761253088422202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bacc0b3f25f6f6d%3A0x4b5f0dc24a4cbfa7!2sGro%20Hair%20%26%20Glo%20Skin%20Dharmapuri!5e0!3m2!1sen!2sin!4v1719421730000!5m2!1sen!2sin"
-            width="100%"
-            height="200"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.82892175197!2d78.15612057482649!3d12.123855188118975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac174363adc97b%3A0xf4c140ff5371623c!2sAdvanced%20GroHair%20%26%20GloSkin%20-%20Dharmapuri!5e0!3m2!1sen!2sin!4v1751092565625!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
 
@@ -410,8 +408,11 @@
     <!-- Bottom Footer -->
     <div class="grofooter-bottom text-center pt-4 mt-4 border-top border-secondary-subtle">
       <p class="small mb-0">
-        &copy; <span id="currentYear"></span> Grohair & Gloskin. All rights reserved.
-        Website by <a href="#" class="text-white fw-semibold">ARA Discover Technologies</a>.
+               &copy; <span id="currentYear"></span> GroHair & GloSkin. All rights reserved.
+    Website created by
+    <a href="https://discovertechnologies.co/" target="_blank" class="ara-link">
+      ARA Discover Technologies - A unit of ARA Discoveries Pvt. Ltd.
+    </a>
       </p>
     </div>
   </div>
