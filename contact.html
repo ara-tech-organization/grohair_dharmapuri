@@ -227,7 +227,7 @@
           </div>
           <div class="contact-box">
             <i class="bi bi-envelope"></i>
-            <p>dharmapuri@adgrohair.com</p>
+            <p>adgrodharmapuri25@gmail.com</p>
           </div>
           <div class="contact-box">
             <i class="bi bi-geo-alt"></i>
@@ -243,28 +243,15 @@
         <form class="gro-contact-form">
           <div class="form-row-custom">
             <div class="form-group-custom">
-              <label for="firstName">First Name *</label>
+              <label for="name">Name *</label>
               <input
                 type="text"
                 class="form-control"
-                id="firstName"
-                placeholder="Enter first name"
+                id="name"
+                placeholder="Enter your name"
                 required
               />
             </div>
-            <div class="form-group-custom">
-              <label for="lastName">Last Name *</label>
-              <input
-                type="text"
-                class="form-control"
-                id="lastName"
-                placeholder="Enter last name"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="form-row-custom">
             <div class="form-group-custom">
               <label for="email">Email Address *</label>
               <input
@@ -275,6 +262,9 @@
                 required
               />
             </div>
+          </div>
+
+          <div class="form-row-custom">
             <div class="form-group-custom">
               <label for="appointmentDate">Select Date *</label>
               <input
@@ -284,34 +274,41 @@
                 required
               />
             </div>
+            <div class="form-group-custom">
+              <label for="mobile">Phone *</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="mobile"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
           </div>
-          <div class="form-group-custom mb-3">
-            <label for="appointmentDate">Phone *</label>
-            <input
-              type="tel"
-              class="form-control"
-              id="mobile"
-              placeholder="Enter your phone number"
-              required
-            />
-          </div>
-          <div class="form-group-custom mb-3">
-            <label for="appointmentTime">Select Time Slot *</label>
-            <select class="form-control" id="appointmentTime" required>
-              <option value="">Choose a time slot</option>
-              <option>8 AM - 9 AM</option>
-              <option>9 AM - 10 AM</option>
-              <option>10 AM - 11 AM</option>
-              <option>11 AM - 12 PM</option>
-              <option>12 PM - 1 PM</option>
-              <option>1 PM - 2 PM</option>
-              <option>2 PM - 3 PM</option>
-              <option>3 PM - 4 PM</option>
-              <option>4 PM - 5 PM</option>
-              <option>5 PM - 6 PM</option>
-              <option>6 PM - 7 PM</option>
-              <option>7 PM - 8 PM</option>
-            </select>
+          <div class="form-row-custom">
+            <div class="form-group-custom">
+              <label for="appointmentTime">Select Time Slot *</label>
+              <select class="form-control" id="appointmentTime" required>
+                <option value="" disabled selected>Select Time Slot</option>
+                <option value="10:00">10:00 AM - 11:00 AM</option>
+                <option value="11:00">11:00 AM - 12:00 PM</option>
+                <option value="12:00">12:00 PM - 1:00 PM</option>
+                <option value="13:00">1:00 PM - 2:00 PM</option>
+                <option value="14:00">2:00 PM - 3:00 PM</option>
+                <option value="15:00">3:00 PM - 4:00 PM</option>
+                <option value="16:00">4:00 PM - 5:00 PM</option>
+                <option value="17:00">5:00 PM - 6:00 PM</option>
+              </select>
+            </div>
+            <div class="form-group-custom">
+              <label for="treatment">Select Treatment *</label>
+              <select class="form-control" id="treatment" required>
+                <option value="" disabled selected>Select Treatment</option>
+                <!-- <option value="FFacial</option> -->
+                <option value="Hair Treatment">Hair Treatment</option>
+                <option value="Skin Treatment">Skin Treatment</option>
+              </select>
+            </div>
           </div>
 
           <div class="form-group-custom">
@@ -371,7 +368,7 @@
               <i class="bi bi-telephone-fill me-2"></i>+91 75991 56789
             </p>
             <p class="mb-3">
-              <i class="bi bi-envelope-fill me-2"></i>dharmapuri@adgrohair.com
+              <i class="bi bi-envelope-fill me-2"></i>adgrodharmapuri25@gmail.com
             </p>
 
             <div class="social-icons mt-2">
@@ -425,40 +422,71 @@
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
     <script>
+      (function () {
+        const dateInput = document.getElementById("appointmentDate");
+        const timeSelect = document.getElementById("appointmentTime");
+
+        function todayStr() {
+          const t = new Date();
+          const yyyy = t.getFullYear();
+          const mm = String(t.getMonth() + 1).padStart(2, "0");
+          const dd = String(t.getDate()).padStart(2, "0");
+          return `${yyyy}-${mm}-${dd}`;
+        }
+
+        function refreshTimeSlots() {
+          if (!timeSelect) return;
+          const isToday = dateInput && dateInput.value === todayStr();
+          const currentHour = new Date().getHours();
+          Array.from(timeSelect.options).forEach((opt) => {
+            if (!opt.value) return;
+            const hour = parseInt(opt.value.split(":")[0], 10);
+            const disable = isToday && hour <= currentHour;
+            opt.disabled = disable;
+            if (disable && timeSelect.value === opt.value) {
+              timeSelect.value = "";
+            }
+          });
+        }
+
+        if (dateInput) {
+          dateInput.min = todayStr();
+          dateInput.addEventListener("change", refreshTimeSlots);
+        }
+        refreshTimeSlots();
+      })();
+
       document
         .querySelector(".gro-contact-form")
         .addEventListener("submit", function (e) {
           e.preventDefault();
 
           const data = {
-            firstName: document.getElementById("firstName").value.trim(),
-            lastName: document.getElementById("lastName").value.trim(),
+            name: document.getElementById("name").value.trim(),
             email: document.getElementById("email").value.trim(),
+            phone: document.getElementById("mobile").value.trim(),
             date: document.getElementById("appointmentDate").value,
             time: document.getElementById("appointmentTime").value,
+            treatment: document.getElementById("treatment").value,
             message: document.getElementById("message").value.trim(),
-            mobile: document.getElementById("mobile").value.trim(),
+            source: "Contact Form",
           };
 
-          console.log("Sending data:", data); // 🔍 See what's being sent
+          console.log("Sending data:", data);
 
-          fetch(
-            "https://schoolcommunication-gmdtekepd3g3ffb9.canadacentral-01.azurewebsites.net/api/postMSMSForm/growandglowDharmapuriForm",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer 123",
-              },
-              body: JSON.stringify(data),
-            }
-          )
+          fetch("https://adgrohairgloskindharmapuri.in/api/email.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
             .then((res) => res.json())
             .then((response) => {
               console.log("API Response:", response);
-              if (!response.error) {
+              if (response.success) {
                 Toastify({
-                  text: "✅ Email sent successfully!",
+                  text: "✅ Message sent successfully!",
                   duration: 4000,
                   gravity: "top",
                   position: "right",
@@ -468,7 +496,7 @@
                 document.querySelector(".gro-contact-form").reset();
               } else {
                 Toastify({
-                  text: `⚠️ ${response.message}`,
+                  text: `⚠️ ${response.message || "Submission failed"}`,
                   duration: 4000,
                   gravity: "top",
                   position: "right",
